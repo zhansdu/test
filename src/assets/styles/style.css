@@ -10,3 +10,10 @@ html,body,#app{
 .cursor-pointer, .cursor-pointer > div{
 	cursor: pointer;
 }
+*{
+	color:#99A6D3 !important;
+	font: Regular 16px/19px Montserrat;
+}
+.text-white{
+	color:white !important;
+}

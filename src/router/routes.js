@@ -1,5 +1,5 @@
-import home from '../views/home/home'
-import description from '../views/home/description'
+import home from '@/views/home/home'
+import description from '@/views/home/description'
 export default [
 {
 	name:'home',

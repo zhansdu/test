@@ -1,15 +1,15 @@
 <template>
     <nav class="navbar navbar-expand-sm bg-transparent">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto align-items-center">
             <li class="nav-item" v-for="(link,index) in links" :key="index">
-                <a class="nav-link" href="#">{{link.name}}</a>
+                <a class="nav-link ml-3" href="#">{{link.name}}</a>
             </li>
-            <li class="nav-item vline" />
-            <li class="nav-item" >
-                <img class="nav-link" src="@/assets/images/icon.svg">
-            </li>
+            <li class="nav-item vline ml-3 mr-3" />
             <li class="nav-item">
-                <button class="btn button nav-link">Войти</button>
+                <dropdownItem/>
+            </li>
+            <li class="nav-item ml-3">
+                <button class="button">Войти</button>
             </li>
         </ul>
     </nav> 
@@ -17,10 +17,22 @@
 <style scoped>
 .vline{
     border:1px solid #99A6D3;
+    height:20px;
+}
+.button{
+    padding: 3px 18px;
+    background:#1F2455 0% 0% no-repeat padding-box;
+    box-shadow: 0px 8px 10px #00000033;
+    border: 1px solid #383E71;
+    border-radius: 19px; 
 }
 </style>
 <script type="text/javascript">
+import dropdownItem from '@/components/shared/dropdownItem'
 export default{
+    components:{
+        dropdownItem
+    },
     data(){
         return{
             links:[

@@ -8,7 +8,10 @@
 			<div class="flex-row" style="padding-right:6%;">
 				<img src="@/assets/images/logo.svg">
 				<div class="flex-row w-100 align-items-center justify-content-center">
-					<div class="cursor-pointer mr-5" :class="{active:link.active}" v-for="(link,index) in links" :key="index">{{link.name}}</div>
+					<div class="cursor-pointer mr-5 flex-column" v-for="(link,index) in links" :key="index">
+						<div :class="{'text-white':activeIndex==index}">{{link.name}}</div>
+						<div v-if="activeIndex==index" class="bottomLine align-self-center"></div>
+					</div>
 				</div>
 			</div>
 			<router-view/>
@@ -22,12 +25,17 @@
 }
 .image{
 	width: 100%;
-	height:90%;
+	height:93%;
 }
 .main{
 	padding-top: 2%;
 	padding-left:9%;
 	padding-right:9%;
+}
+.bottomLine{
+	background: #F15713 0% 0% no-repeat padding-box;
+	height:3px;
+	width:21px;
 }
 </style>
 <script>
@@ -39,15 +47,12 @@ export default{
 			links:[
 			{
 				name:'Описание',
-				active:false
 			},
 			{
 				name:'Скачать',
-				active:false
 			},
 			{
 				name:'Инструкции',
-				active:false
 			}
 			]
 		}
