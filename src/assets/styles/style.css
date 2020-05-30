@@ -1,0 +1,12 @@
+html{
+	min-height: 100vh;
+}
+html,body,#app{
+	height: 100%;
+}
+.flex-column,.flex-row{	
+	display: flex;
+}
+.cursor-pointer, .cursor-pointer > div{
+	cursor: pointer;
+}
